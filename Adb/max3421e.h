@@ -31,7 +31,13 @@ limitations under the License.#include <string.h>
 
 #include "max3421e_constants.h"
 #include "pins_arduino.h"
-
+//Kenichi Yoshida 2012/02/02
+//ADKリファレンスボードでMicroBridgeを使う
+//See Ref: http://iwatanlab.blogspot.com/search?q=Microbridge+Galileo+7
+//Neilsさんのコメントでは十分なテストはしておらず推測の作業(guesswork)らしい。
+#if defined(__AVR_ATmega1280__) || (__AVR_ATmega2560__)
+	#define ADK_REF_BOARD
+#endif
 /**
  * Max3421e registers in host mode.
  */
